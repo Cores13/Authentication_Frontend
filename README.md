@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# React JWT and Refresh token authentication
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Authentication using **JWT** and **Refresh token**, with **password reset** and **email verification**
+API for this project can be found [here](https://github.com/Cores13/Authentication_API)
 
 ## Available Scripts
 
