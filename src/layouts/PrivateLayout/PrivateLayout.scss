@@ -1,0 +1,255 @@
+@import '../../assets/scss/variables.scss';
+
+.private-layout {
+  display: flex;
+  height: 100vh;
+
+  .menu-wrapper {
+    width: 20%;
+    background: $primary;
+    overflow: auto;
+
+    .logo {
+      margin-top: 50px;
+      margin-bottom: 55px;
+      width: 215px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .border-separator {
+      border-top: 2px solid #fff;
+      margin: 0 35px;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 30px;
+      padding: 0;
+
+      li {
+        display: flex;
+        justify-content: center;
+
+        .list-item {
+          color: #fff;
+          padding: 25px;
+          width: 100%;
+          font-weight: 700;
+          text-decoration: none;
+          font-size: 20px;
+          transition: background 0.2s;
+          align-items: center;
+          display: flex;
+
+          .item-icon-wrapper {
+            margin-right: 25px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .item-img {
+              max-width: 30px;
+              max-height: 30px;
+            }
+          }
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.2);
+          }
+
+          &.selected {
+            padding-left: 30px;
+            background: rgba(255, 255, 255, 0.35);
+            border-left: 5px solid white;
+          }
+        }
+      }
+    }
+  }
+
+  .content-wrapper {
+    height: 100vh;
+    width: 80%;
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      width: 95%;
+      height: 100px;
+      padding-left: 20px;
+      // padding-right: 35px;
+      justify-content: space-between;
+
+      .user-menu {
+        display: flex;
+        align-items: center;
+
+        .dropdown-wrapper {
+          width: 300px;
+          // ovaj dio sa scrollbarom i ostatkom bi prebacio u sami Dropdown,
+          // a ovdje mozemo definisati width recimo
+          // Tako da bude svudgje Dropdown isti, jer ce nam trebati i
+          // na ovim stvarima, ok? Ok :thumbsup: :D
+
+          .notification-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-decoration: none;
+
+            .notification-avatar {
+              width: 34px;
+              height: 34px;
+              border-radius: 17px;
+              margin-right: 12px;
+            }
+
+            .notification-dot {
+              width: 5px;
+              height: 5px;
+              display: inline-block;
+              background: $primary;
+            }
+
+            .notification-accent-text {
+              color: $textColor;
+              font-size: 12px;
+              font-weight: 700;
+            }
+
+            .notification-text {
+              color: $textColor;
+              font-weight: 500;
+            }
+
+            .notification-date {
+              color: #999;
+              font-size: 12px;
+            }
+          }
+
+          .settings-list-item {
+            list-style-type: none;
+            margin-bottom: 10px;
+          }
+
+          .no-notifications-text {
+            display: inline-block;
+            padding: 20px;
+          }
+
+          .settings-list-item-link {
+            text-decoration: none;
+            color: $textColor;
+
+            &:hover {
+              color: $primary;
+              cursor: pointer;
+            }
+          }
+
+          &.user-settings {
+            width: 230px;
+          }
+        }
+
+        .notification-wrapper:first-child {
+          margin-top: 15px;
+          margin-left: 0;
+        }
+      }
+
+      .search-wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .search-icon {
+          position: absolute;
+          height: 20px;
+          margin-left: 10px;
+        }
+
+        .search-input {
+          width: 170px;
+          height: 38px;
+          border: 1px solid #c2c9d1;
+          box-sizing: border-box;
+          border-radius: 7px;
+          padding-left: 35px;
+          font-size: 16px;
+
+          &::placeholder {
+            color: #c2c9d1;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+
+    .page-content {
+      height: calc(100vh - 100px);
+      overflow: auto;
+      background: white;
+    }
+  }
+
+  .notification-img {
+    height: 26px;
+    cursor: pointer;
+  }
+
+  .user-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .user-avatar-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 24px;
+      margin-right: 12px;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .user-name {
+      font-size: 20px;
+      color: $textColor;
+    }
+
+    .chevron-img {
+      margin-left: 12px;
+      width: 16px;
+    }
+  }
+
+  .notification-icon-wrapper {
+    position: relative;
+    margin-right: 30px;
+
+    .notification-count {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: $primary;
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .notification-count-text {
+        color: white;
+        font-size: 11px;
+      }
+    }
+  }
+}

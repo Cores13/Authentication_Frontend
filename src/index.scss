@@ -1,0 +1,207 @@
+// @import '../node_modules/bootstrap/scss/bootstrap-grid.scss';
+@import '~bootstrap/scss/bootstrap-grid.scss';
+@import '../node_modules/react-toastify/dist/ReactToastify.css';
+@import './assets/scss/spinner.scss';
+// @import '../node_modules/react-confirm-alert/src/react-confirm-alert.css';
+
+body {
+  margin: 0;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  .shadow-card {
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.15);
+  }
+
+  .table-cell-category-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background: #999;
+  }
+}
+
+.comments-icon-link {
+  text-decoration: none;
+
+  &:hover {
+    .comments-icon {
+      opacity: 0.6;
+    }
+  }
+
+  .comments-icon {
+    width: 36px;
+    height: 36px;
+    display: block;
+    // background: url('assets/images/private-layout/comments.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    line-height: 28px;
+    margin: auto;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.2s;
+  }
+}
+
+.auth-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(-45deg, #c3c3cd 10%, #fff 50%);
+  overflow: hidden;
+  position: relative;
+
+  .bg-shape {
+    position: absolute;
+    top: -25%;
+    left: -25%;
+    width: 65%;
+    height: 180%;
+    background: linear-gradient(lighten($primary, 20), darken($primary, 5));
+    transform: rotate(-30deg);
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .login-note {
+    color: #888;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+
+  form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+
+    input {
+      width: 350px;
+      height: 45px;
+      background: none;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      outline: none;
+      margin-bottom: 16px;
+      color: #222;
+      transition: all 0.2s;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:focus {
+        border-color: $primary;
+      }
+
+      &::placeholder {
+        color: #666;
+      }
+    }
+
+    .form-footer {
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .forgot-password-link {
+        color: $primary;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.container {
+}
+
+.button {
+  position: relative;
+  border: none;
+  background: linear-gradient(180deg, #ff0000 0%, #bc0a11 100%);
+  border-radius: 4px;
+  padding: 14px 36px;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-weight: 500;
+
+  &:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  &.button-loading {
+    color: transparent;
+    pointer-events: none;
+
+    &:before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      border: 2px solid #fff;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -10px;
+      margin-left: -10px;
+      animation: spin 1s infinite linear;
+    }
+  }
+
+  &[disabled] {
+    pointer-events: none;
+    background: #999;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.users-table-body {
+  display: block;
+  overflow: auto;
+  // overflow-y: scroll; 
+}
+.users-table-body {
+    display: block;
+    max-height: 500px;
+    height: auto;
+    overflow: auto;
+    width: 100%;
+}
+.users-table-head, .users-table-body tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;/* even columns width , fix width of table too*/
+}
+.users-table-head {
+    width: calc( 100% - 1em )/* scrollbar is average 1em/16px width, remove it from thead width */
+}
