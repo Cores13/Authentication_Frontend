@@ -1,7 +1,6 @@
 # React JWT and Refresh token authentication
 
-Authentication using **JWT** and **Refresh token**, with **password reset** and **email verification**
-API for this project can be found [here](https://github.com/Cores13/Authentication_API)
+Authentication using **JWT** and **Refresh token**, with **password reset** and **email verification**. API for this project can be found [here](https://github.com/Cores13/Authentication_API)
 
 ## Available Scripts
 
