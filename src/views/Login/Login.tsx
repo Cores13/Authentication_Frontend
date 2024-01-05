@@ -63,7 +63,7 @@ const Login = () => {
         <div className="row">
           <div className="col-md-6 offset-md-6">
             <div className="d-flex flex-column align-items-center">
-              {/* <img src={logo} alt="Takeda logo" width={250} /> */}
+              {/* <img src={logo} alt="Authentication logo" width={250} /> */}
 
               <div className="login-note">Molimo Vas unesite svoje podatke</div>
 

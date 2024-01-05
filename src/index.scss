@@ -2,6 +2,7 @@
 @import '~bootstrap/scss/bootstrap-grid.scss';
 @import '../node_modules/react-toastify/dist/ReactToastify.css';
 @import './assets/scss/spinner.scss';
+@import './assets/scss/variables.scss';
 // @import '../node_modules/react-confirm-alert/src/react-confirm-alert.css';
 
 body {
@@ -136,7 +137,8 @@ body {
 .button {
   position: relative;
   border: none;
-  background: linear-gradient(180deg, #ff0000 0%, #bc0a11 100%);
+  background: $primary;
+  // background: linear-gradient(180deg, #ff0000 0%, #bc0a11 100%);
   border-radius: 4px;
   padding: 14px 36px;
   outline: none;

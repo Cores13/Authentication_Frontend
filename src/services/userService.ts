@@ -1,5 +1,6 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { Dispatch } from 'redux';
-import { UsersApiApiUsersForgotPasswordRequestPostRequest, UsersApiApiUsersForgotPasswordResetPasswordPostRequest, UsersApiApiUsersForgotPasswordVerifyCodePostRequest, UsersApiApiUsersMePutRequest } from '../api';
+import { ApiUsersResendVerificationEmailPostRequest, ApiUsersVerifyEmailPostRequest, UsersApiApiUsersForgotPasswordRequestPostRequest, UsersApiApiUsersForgotPasswordResetPasswordPostRequest, UsersApiApiUsersForgotPasswordVerifyCodePostRequest, UsersApiApiUsersMePutRequest } from '../api';
 import { setCurrentUser } from '../redux/auth/authSlice';
 import { defaultErrorHandler } from '../utils/error-handler';
 import { UsersApi } from '../api/apis/usersApi';
@@ -127,6 +128,34 @@ const forgotPasswordResetPassword = async (
   }
 }
 
+const verifyEmail = async (
+  data: ApiUsersVerifyEmailPostRequest
+  ) => {
+  try {
+    const response = await usersApi.apiUsersVerifyEmailPost(
+      data
+    );
+    return Promise.resolve(response.data);
+  } catch (e: any) {
+    defaultErrorHandler(e.response?.data);
+    return Promise.reject(e.response?.data);
+  }
+}
+
+const resendEmailVerificationLink = async (
+  data: ApiUsersResendVerificationEmailPostRequest
+  ) => {
+  try {
+    const response = await usersApi.apiUsersResendVerificationEmailPost(
+      data
+    );
+    return Promise.resolve(response.data);
+  } catch (e: any) {
+    defaultErrorHandler(e.response?.data);
+    return Promise.reject(e.response?.data);
+  }
+}
+
 export default {
   getMe,
   addAdmin,
@@ -138,4 +167,6 @@ export default {
   forgotPasswordRequest,
   forgotPasswordVerifyCode,
   forgotPasswordResetPassword,
+  verifyEmail,
+  resendEmailVerificationLink
 };

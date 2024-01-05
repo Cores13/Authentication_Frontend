@@ -12,9 +12,10 @@ import { persistor, store } from './redux/store';
 // import Home from './views/Home/Home';
 import Login from './views/Login/Login';
 import './App.css';
-// import ForgotPassword from './views/ForgotPassword/ForgotPassword';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Home from './views/Home';
+import ForgotPassword from './views/ForgotPassword';
+import VerifyEmail from './views/VerifyEmail';
 
 function App() {
   return (
@@ -31,7 +32,8 @@ function App() {
                 <Route path='/materials/:id' element={<SaveMaterial/>}/>
               </Route> */}
 
-              {/* <Route path='/forgot-password' element={<ForgotPassword/>}/> */}
+              <Route path='/verify-email/:id/:code' element={<VerifyEmail/>}/>
+              <Route path='/forgot-password' element={<ForgotPassword/>}/>
               <Route path='/login' element={<Login/>}/>
               <Route path="*" element={<Navigate to="/" />} />
             </Switch>
