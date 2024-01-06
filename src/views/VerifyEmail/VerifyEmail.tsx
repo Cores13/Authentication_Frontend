@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './VerifyEmail.scss'
 import { useNavigate, useParams } from 'react-router-dom';
 import userService from '../../services/userService';
@@ -12,14 +12,12 @@ const VerifyEmail = () => {
     const { id, code } = useParams();
 
     useEffect(() => {
-        console.log('PARAMS', id, code);
         if(id && code){
             verifyEmail();
         }
     }, [code, id]);
 
     const resendLink = () => {
-        console.log('PARAMS', id, code);
         if(!resend){
             userService
                 .resendEmailVerificationLink({
@@ -39,7 +37,6 @@ const VerifyEmail = () => {
     }
 
     const verifyEmail = () => {
-        console.log('PARAMS', id, code);
         if(!requestSent){
             setRequestSent(true);
             userService
