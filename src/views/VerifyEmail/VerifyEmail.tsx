@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './VerifyEmail.scss'
 import { useNavigate, useParams } from 'react-router-dom';
 import userService from '../../services/userService';
@@ -12,12 +12,14 @@ const VerifyEmail = () => {
     const { id, code } = useParams();
 
     useEffect(() => {
+        console.log('PARAMS', id, code);
         if(id && code){
             verifyEmail();
         }
     }, [code, id]);
 
     const resendLink = () => {
+        console.log('PARAMS', id, code);
         if(!resend){
             userService
                 .resendEmailVerificationLink({
@@ -37,6 +39,7 @@ const VerifyEmail = () => {
     }
 
     const verifyEmail = () => {
+        console.log('PARAMS', id, code);
         if(!requestSent){
             setRequestSent(true);
             userService
@@ -68,12 +71,13 @@ const VerifyEmail = () => {
                 <div className="row">
                     <div className="col-md-6 offset-md-6">
                         <div className="d-flex flex-column align-items-center">
-                            {/* <img src={logo} alt="Authentication logo" width={250} /> */}
+                            {/* <img src={logo} alt="Takeda logo" width={250} /> */}
                             {pending && <div className="spinner mt-4" />}
                             {!pending && verified && 
-                                <h1>
-                                    Uspješno ste verifikovali email adresu.
-                                </h1>
+                                <>
+                                    <h1>Uspješno ste verifikovali email adresu.</h1>
+                                    <a className='button no-decoration' href='/login'>Prijava</a>
+                                </>
                             }
                             {!pending && !verified && 
                                 <h1>

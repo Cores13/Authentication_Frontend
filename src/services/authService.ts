@@ -41,7 +41,8 @@ const refreshToken = (data: RefreshTokenRequestDto) => {
 
       return Promise.resolve(response.data);
     } catch (error: any) {
-      defaultErrorHandler(error.response?.data);
+      // defaultErrorHandler(error.response?.data);
+      defaultErrorHandler(error.response);
       return Promise.reject(error.response?.data);
     }
   };

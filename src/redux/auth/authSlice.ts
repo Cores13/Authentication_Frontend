@@ -2,13 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 // import { UserResponseDto } from '../../api';
 
 export type AuthState = Readonly<{
-  token: string | null;
+  accessToken: string | null;
   refreshToken: string | null;
   user: any | null;
 }>;
 
 export const initialState: AuthState = {
-  token: null,
+  accessToken: null,
   refreshToken: null,
   user: null,
 };
@@ -19,7 +19,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     authSuccess(state, action: PayloadAction<any>) {
-      state.token = action.payload.accessToken || null;
+      state.accessToken = action.payload.accessToken || null;
       state.refreshToken = action.payload.refreshToken || null;
     },
     authFailure() {

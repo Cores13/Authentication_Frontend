@@ -29,7 +29,8 @@ const Login = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const { from }: any = location.state || { from: { pathname: '/' } };
+  // const { from }: any = location.state || { from: { pathname: '/' } };
+  const { from }: any = location.state || { from: { pathname: '/campaings' } };
 
   const onLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -63,27 +64,27 @@ const Login = () => {
         <div className="row">
           <div className="col-md-6 offset-md-6">
             <div className="d-flex flex-column align-items-center">
-              {/* <img src={logo} alt="Authentication logo" width={250} /> */}
+              {/* <img src={logo} alt="Takeda logo" width={250} /> */}
 
-              <div className="login-note">Molimo Vas unesite svoje podatke</div>
+              {/* <div className="login-note">Login</div> */}
 
               <form onSubmit={onLogin}>
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email adresa"
+                  placeholder="Email"
                   onChange={handleInputChange}
                 />
                 <input
                   type="password"
                   name="password"
-                  placeholder="Lozinka"
+                  placeholder="Password"
                   onChange={handleInputChange}
                 />
 
                 <div className="form-footer">
                   <Link to="/forgot-password" className="forgot-password-link">
-                    Zaboravili ste lozinku?
+                    Forgot password?
                   </Link>
                   <button
                     className={`button ${
@@ -92,7 +93,7 @@ const Login = () => {
                     type="submit"
                     disabled={!state.email || !state.password}
                   >
-                    Prijava
+                    LOGIN
                   </button>
                 </div>
               </form>

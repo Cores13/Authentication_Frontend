@@ -1,0 +1,89 @@
+@import "../../assets/scss/variables.scss";
+
+.switch-wrapper {
+    display: flex;
+    flex-direction: column;
+    // width: 90%;
+    width: 50%;
+    margin: 12px 24px;
+
+    .title {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 8px;
+        text-transform: capitalize;
+    }
+
+    .switch-items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: rgba(227, 227, 227, 0.30);
+
+        padding: 12px 16px;
+
+        .text-wrapper{
+            color: $primary;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 26px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: white;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 34px;
+            border: 1px solid $primary;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 2px;
+            background-color: $primary;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: $primary;
+        }
+
+        //input:focus + .slider {
+            // box-shadow: 0 0 1px $primary;
+        //}
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(21px);
+            -ms-transform: translateX(21px);
+            transform: translateX(21px);
+            background-color: white;
+        }
+    }
+}

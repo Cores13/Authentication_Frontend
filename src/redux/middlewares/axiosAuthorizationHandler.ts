@@ -8,8 +8,8 @@ const axiosAuthorizationHandler = (store: Store) => {
     (config: any) => {
       const state = store.getState() as AppState;
 
-      if (state.auth.token) {
-        config.headers.Authorization = `Bearer ${state.auth.token}`;
+      if (state.auth.accessToken) {
+        config.headers.Authorization = `Bearer ${state.auth.accessToken}`;
       }
 
       return config;

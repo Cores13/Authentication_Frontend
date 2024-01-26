@@ -1,0 +1,46 @@
+
+@import '../../../assets/scss/variables.scss';
+
+.table-footer {
+    // background-color: #f1f1f1;
+    padding: 8px 0px;
+    width: 100%;
+    font-weight: 500;
+    text-align: left;
+    font-size: 16px;
+    color: #2c3e50;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-button {
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 4px;
+    margin-left: 4px;
+
+    transition: all .3s ease;
+
+    border: 1px solid transparent;
+
+    color: $primary;
+    background: transparent;
+
+    font-family: 'Poppins', sans-serif;
+
+    &:hover{
+        border-color: $primary;
+    }
+
+    &.active {
+        color: white;
+        background: $primary;
+    }
+}

@@ -1,10 +1,10 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { Dispatch } from 'redux';
-import { ApiUsersResendVerificationEmailPostRequest, ApiUsersVerifyEmailPostRequest, UsersApiApiUsersForgotPasswordRequestPostRequest, UsersApiApiUsersForgotPasswordResetPasswordPostRequest, UsersApiApiUsersForgotPasswordVerifyCodePostRequest, UsersApiApiUsersMePutRequest } from '../api';
+import { AdminUsersApiApiAdminUsersGetRequest, AdminUsersApiApiAdminUsersNewAdminPostRequest, AdminUsersApiApiAdminUsersPutRequest, ApiUsersResendVerificationEmailPostRequest, ApiUsersVerifyEmailPostRequest, UsersApiApiUsersForgotPasswordRequestPostRequest, UsersApiApiUsersForgotPasswordResetPasswordPostRequest, UsersApiApiUsersForgotPasswordVerifyCodePostRequest, UsersApiApiUsersMePutRequest } from '../api';
 import { setCurrentUser } from '../redux/auth/authSlice';
 import { defaultErrorHandler } from '../utils/error-handler';
 import { UsersApi } from '../api/apis/usersApi';
-import { AdminUsersApi, AdminUsersApiApiAdminUsersGetRequest, AdminUsersApiApiAdminUsersNewAdminPostRequest, AdminUsersApiApiAdminUsersPutRequest } from '../api/apis/adminUsersApi';
+import { AdminUsersApi } from '../api/apis/adminUsersApi';
 
 // @ts-ignore
 const usersApi = new UsersApi({

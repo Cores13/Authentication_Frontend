@@ -39,7 +39,7 @@ const axiosRefreshTokenHandler = (store: Store) => {
             refreshTokenPromise = null;
             isRefreshing = false;
 
-            if (newState.auth.token) {
+            if (newState.auth.accessToken) {
               return axios.request(error.config);
             }
           } catch (e) {

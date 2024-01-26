@@ -63,7 +63,7 @@ const ForgotPassword = () => {
             })
             .then(
                 () => {
-                    toast.success('Nova lozinka postavljena.');
+                    toast.success('New password has been set.');
                     navigate('/');
                     setPending(false);
                 },
@@ -81,7 +81,7 @@ const ForgotPassword = () => {
             <div className="row">
                 <div className="col-md-6 offset-md-6">
                     <div className="d-flex flex-column align-items-center">
-                        {/* <img src={logo} alt="Authentication logo" width={250} /> */}
+                        {/* <img src={logo} alt="Takeda logo" width={250} /> */}
                         <form
                             onSubmit={(e) => {
                             e.preventDefault();
@@ -90,8 +90,8 @@ const ForgotPassword = () => {
                             {currentStep === 'enterEmail' && (
                                 <>
                                     <div className="login-note">
-                                        Unesite svoj e-mail kako bi vam mogli poslati link za
-                                        reset lozinke.
+                                        Please enter your email so we can send you a link to
+                                        password reset.
                                     </div>
                                     <input
                                     type="email"
@@ -106,11 +106,11 @@ const ForgotPassword = () => {
                             {currentStep === 'enterCode' && (
                                 <>
                                     <div className="login-note">
-                                        Unesite kod koji ste primili putem maila.
+                                        Please enter the code you received via email.
                                     </div>
                                     <input
                                     name="code"
-                                    placeholder="Kod"
+                                    placeholder="Code"
                                     onChange={(e) =>
                                         setCode(e.target.value)
                                     }/>
@@ -120,12 +120,12 @@ const ForgotPassword = () => {
                             {currentStep === 'enterNewPassword' && (
                                 <>
                                     <div className="login-note">
-                                        Unesite novu lozinku za vaš korisnički račun.
+                                        Please enter a new password for your user account.
                                     </div>
                                     <input
                                     name="password"
                                     type="password"
-                                    placeholder="Lozinka"
+                                    placeholder="Password"
                                     onChange={(e) =>
                                         setPassword(e.target.value)
                                     }/>
@@ -138,7 +138,7 @@ const ForgotPassword = () => {
                                     pending ? 'button-loading' : ''
                                     }`}
                                     type="submit">
-                                    Dalje
+                                    NEXT
                                 </button>
                             </div>
                         </form>

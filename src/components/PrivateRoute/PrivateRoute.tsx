@@ -6,7 +6,7 @@ import PrivateLayout from "../../layouts/PrivateLayout";
 
 const PrivateRoute = ({role, specificCondition}: any) => {
   const auth = useSelector((state: AppState) => state.auth);
-  const isLoggedIn = !!auth.token;
+  const isLoggedIn = !!auth.accessToken;
   const userRole = auth.user?.role;
 
   const validRole = role ? role === userRole : true;

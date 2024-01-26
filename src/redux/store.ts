@@ -44,7 +44,7 @@ const store = configureStore({
 const persistor = persistStore(store, {}, () => {
   //   store.dispatch(appStartup());
   const state = store.getState() as AppState;
-  if (state.auth.token) {
+  if (state.auth.accessToken) {
     store.dispatch(usersService.getMe());
   }
 });
